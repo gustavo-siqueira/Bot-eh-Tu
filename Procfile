@@ -1,1 +1,1 @@
-main: python "/src/main.py"
+worker: python3 "main.py"
