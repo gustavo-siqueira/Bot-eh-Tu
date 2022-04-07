@@ -309,7 +309,7 @@ class Commands(commands.Cog):
     def _play_song(self, ctx, song):
         FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options': '-vn'}
 
-        ctx.voice_client.play(discord.FFmpegPCMAudio(song['formats'], executable=environ.get('FFMPEG_EXE'), **FFMPEG_OPTIONS), after=lambda e:  self._next_song(ctx))
+        ctx.voice_client.play(discord.FFmpegPCMAudio(song['formats'], executable=environ.get('FFMPEG_DOWNLOAD_URL'), **FFMPEG_OPTIONS), after=lambda e:  self._next_song(ctx))
         
         return
                
