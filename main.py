@@ -35,6 +35,10 @@ class BotehTu(commands.Bot):
 if __name__ == "__main__":
     bot = BotehTu()
     bot.add_cog(Commands(bot))
+
+    discord.opus.load_opus()
+    if not discord.opus.is_loaded():
+        raise RuntimeError('Opus failed to load')
     
     load_dotenv()
 
